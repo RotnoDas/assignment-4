@@ -20,47 +20,39 @@
             font-family: "Geist", sans-serif;
             box-sizing: border-box;
         }
-
         .w-\[1110px\] {
             width: 100% !important;
             max-width: 1110px;
             padding-left: 1rem;
             padding-right: 1rem;
         }
-
         .card-container {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1rem;
         }
-
         @media (min-width: 768px) {
             .card-container {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
-
         @media (min-width: 1024px) {
             .card-container {
                 grid-template-columns: repeat(1, minmax(0, 1fr));
             }
-
             .w-\[1110px\] {
                 padding-left: 0;
                 padding-right: 0;
             }
         }
-
         .hidden.card-container {
             display: none !important;
         }
-
         .job-actions {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
-
         @media (min-width: 1024px) {
             .job-actions {
                 flex-direction: row;

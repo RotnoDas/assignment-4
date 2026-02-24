@@ -19,40 +19,29 @@ if (total === 0) {
     const noJobsSection = document.getElementById('no-jobs-section');
     noJobsSection.classList.add('flex');
     noJobsSection.classList.remove('hidden');
-
     const allCardContainer = document.getElementById('all-card-container');
     allCardContainer.classList.add('hidden');
-
     const interviewCardContainer = document.getElementById('interview-card-container');
     interviewCardContainer.classList.add('hidden');
-
     const rejectedCardContainer = document.getElementById('rejected-card-container');
     rejectedCardContainer.classList.add('hidden');
-
     const totalJob = document.getElementById('total-job');
     totalJob.innerText = total;
-
     const availableTotalJobs = document.getElementById('available-total-jobs');
     availableTotalJobs.innerText = total;
-
 }
 else {
     const noJobsSection = document.getElementById('no-jobs-section');
     noJobsSection.classList.remove('flex');
     noJobsSection.classList.add('hidden');
-
     const allCardContainer = document.getElementById('all-card-container');
     allCardContainer.classList.remove('hidden');
-
     const interviewCardContainer = document.getElementById('interview-card-container');
     interviewCardContainer.classList.add('hidden');
-
     const rejectedCardContainer = document.getElementById('rejected-card-container');
     rejectedCardContainer.classList.add('hidden');
-
     const totalJob = document.getElementById('total-job');
     totalJob.innerText = total;
-
     const availableTotalJobs = document.getElementById('available-total-jobs');
     availableTotalJobs.innerText = total;
 }

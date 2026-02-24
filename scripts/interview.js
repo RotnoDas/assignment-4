@@ -10,7 +10,7 @@ function rejectCounter() {
     return totalRejected;
 }
 
-function syncOriginalCardStatus(cardID, status) {
+function saveOriginalCardStatus(cardID, status) {
     const originalCard = document.getElementById(cardID);
     if (!originalCard) return;
 
@@ -102,7 +102,7 @@ interviewJobButtons.forEach(function (button) {
             badge.classList.add('bg-red-600');
             badge.classList.add('text-white');
             badge.innerText = 'REJECTED';
-            syncOriginalCardStatus(cardID, 'rejected');
+            saveOriginalCardStatus(cardID, 'rejected');
             rejectedCardContainer.appendChild(card);
             const rejectedJob = document.getElementById('rejected-job');
             rejectedJob.innerText = rejectCounter();
@@ -113,7 +113,7 @@ interviewJobButtons.forEach(function (button) {
             deleteButtonR.addEventListener('click', function () {
                 const card = deleteButtonR.closest('.card');
                 card.remove();
-                syncOriginalCardStatus(cardID, 'not-applied');
+                saveOriginalCardStatus(cardID, 'not-applied');
                 const rejectedJob = document.getElementById('rejected-job');
                 rejectedJob.innerText = rejectCounter();
                 const rejectedCount = document.getElementById('rejected-count');
@@ -146,7 +146,7 @@ interviewJobButtons.forEach(function (button) {
                 badge.classList.add('bg-green-600');
                 badge.classList.add('text-white');
                 badge.innerText = 'INTERVIEW';
-                syncOriginalCardStatus(cardID, 'interview');
+                saveOriginalCardStatus(cardID, 'interview');
                 interviewCardContainer.appendChild(card);
                 const interviewJob = document.getElementById('interview-job');
                 interviewJob.innerText = interviewCounter();
@@ -157,7 +157,7 @@ interviewJobButtons.forEach(function (button) {
                 deleteButtonI.addEventListener('click', function () {
                     const card = deleteButtonI.closest('.card');
                     card.remove();
-                    syncOriginalCardStatus(cardID, 'not-applied');
+                    saveOriginalCardStatus(cardID, 'not-applied');
                     const interviewJob = document.getElementById('interview-job');
                     interviewJob.innerText = interviewCounter();
                     const interviewCount = document.getElementById('interview-count');

@@ -8,10 +8,8 @@ const allButtons = document.getElementById('all-button');
 allButtons.addEventListener('click', function () {
     const allCardContainer = document.getElementById('all-card-container');
     allCardContainer.classList.remove('hidden');
-
     const interviewCardContainer = document.getElementById('interview-card-container');
     interviewCardContainer.classList.add('hidden');
-
     const rejectedCardContainer = document.getElementById('rejected-card-container');
     rejectedCardContainer.classList.add('hidden');
 })

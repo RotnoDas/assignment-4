@@ -113,6 +113,7 @@ interviewJobButtons.forEach(function (button) {
             deleteButtonR.addEventListener('click', function () {
                 const card = deleteButtonR.closest('.card');
                 card.remove();
+                syncOriginalCardStatus(cardID, 'not-applied');
                 const rejectedJob = document.getElementById('rejected-job');
                 rejectedJob.innerText = rejectCounter();
                 const rejectedCount = document.getElementById('rejected-count');
@@ -156,6 +157,7 @@ interviewJobButtons.forEach(function (button) {
                 deleteButtonI.addEventListener('click', function () {
                     const card = deleteButtonI.closest('.card');
                     card.remove();
+                    syncOriginalCardStatus(cardID, 'not-applied');
                     const interviewJob = document.getElementById('interview-job');
                     interviewJob.innerText = interviewCounter();
                     const interviewCount = document.getElementById('interview-count');

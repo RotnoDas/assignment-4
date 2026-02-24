@@ -50,23 +50,18 @@ const allButton = document.getElementById('all-button');
 allButton.addEventListener('click', function () {
     const allCardContainer = document.getElementById('all-card-container');
     allCardContainer.classList.remove('hidden');
-
     const availableJobCount = document.getElementById('available-job-count');
     availableJobCount.classList.add('flex');
     availableJobCount.classList.remove('hidden');
-
     const interviewJobCount = document.getElementById('interview-job-count');
     interviewJobCount.classList.add('hidden');
     interviewJobCount.classList.remove('flex');
-
     const rejectedJobCount = document.getElementById('rejected-job-count');
     rejectedJobCount.classList.add('hidden');
     rejectedJobCount.classList.remove('flex');
-
     const noJobsSection = document.getElementById('no-jobs-section');
     noJobsSection.classList.remove('flex');
     noJobsSection.classList.add('hidden');
-
     if (allJobCounter() === 0) {
         noJobsSection.classList.remove('hidden');
         noJobsSection.classList.add('flex');

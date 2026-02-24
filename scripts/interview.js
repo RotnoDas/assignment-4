@@ -147,33 +147,25 @@ interviewButton.addEventListener('click', function () {
     const availableJobCount = document.getElementById('available-job-count');
     availableJobCount.classList.remove('flex');
     availableJobCount.classList.add('hidden');
-
     const interviewJobCount = document.getElementById('interview-job-count');
     interviewJobCount.classList.add('flex');
     interviewJobCount.classList.remove('hidden');
-
     const rejectedJobCount = document.getElementById('rejected-job-count');
     rejectedJobCount.classList.add('hidden');
     rejectedJobCount.classList.remove('flex');
-
     const totalInterview = interviewCounter();
     if (totalInterview === 0) {
         const noJobsSection = document.getElementById('no-jobs-section');
         noJobsSection.classList.remove('hidden');
         noJobsSection.classList.add('flex');
-
         const allCardContainer = document.getElementById('all-card-container');
         allCardContainer.classList.add('hidden');
-
         const interviewCardContainer = document.getElementById('interview-card-container');
         interviewCardContainer.classList.add('hidden');
-
         const rejectedCardContainer = document.getElementById('rejected-card-container');
         rejectedCardContainer.classList.add('hidden');
-
         const interviewCount = document.getElementById('interview-count');
         interviewCount.innerText = totalInterview;
-
         const availableTotalJobsInterview = document.getElementById('available-total-jobs-interview');
         availableTotalJobsInterview.innerText = allJobCounter();
     }
@@ -181,19 +173,14 @@ interviewButton.addEventListener('click', function () {
         const noJobsSection = document.getElementById('no-jobs-section');
         noJobsSection.classList.add('hidden');
         noJobsSection.classList.remove('flex');
-
         const allCardContainer = document.getElementById('all-card-container');
         allCardContainer.classList.add('hidden');
-
         const interviewCardContainer = document.getElementById('interview-card-container');
         interviewCardContainer.classList.remove('hidden');
-
         const rejectedCardContainer = document.getElementById('rejected-card-container');
         rejectedCardContainer.classList.add('hidden');
-
         const interviewCount = document.getElementById('interview-count');
         interviewCount.innerText = totalInterview;
-
         const availableTotalJobsInterview = document.getElementById('available-total-jobs-interview');
         availableTotalJobsInterview.innerText = allJobCounter();
     }

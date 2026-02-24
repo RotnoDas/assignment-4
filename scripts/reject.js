@@ -10,6 +10,35 @@ function interviewCounter() {
     return totalInterview;
 }
 
+function syncOriginalCardStatus(cardID, status) {
+    const originalCard = document.getElementById(cardID);
+    if (!originalCard) return;
+
+    originalCard.classList.remove('border-l-[#F1F2F4]', 'border-l-green-600', 'border-l-red-600');
+    const badge = originalCard.querySelector('#badge');
+
+    if (status === 'interview') {
+        originalCard.classList.add('border-l-green-600');
+        badge.classList.remove('bg-[#EEF4FF]', 'bg-red-600', 'text-[#002C5C]');
+        badge.classList.add('bg-green-600', 'text-white');
+        badge.innerText = 'INTERVIEW';
+        return;
+    }
+
+    if (status === 'rejected') {
+        originalCard.classList.add('border-l-red-600');
+        badge.classList.remove('bg-[#EEF4FF]', 'bg-green-600', 'text-[#002C5C]');
+        badge.classList.add('bg-red-600', 'text-white');
+        badge.innerText = 'REJECTED';
+        return;
+    }
+
+    originalCard.classList.add('border-l-[#F1F2F4]');
+    badge.classList.remove('bg-green-600', 'bg-red-600', 'text-white');
+    badge.classList.add('bg-[#EEF4FF]', 'text-[#002C5C]');
+    badge.innerText = 'NOT APPLIED';
+}
+
 const rejectedJobButtons = document.querySelectorAll('#rejected-job-button');
 rejectedJobButtons.forEach(function (button) {
     button.addEventListener('click', function () {
@@ -72,6 +101,7 @@ rejectedJobButtons.forEach(function (button) {
             badge.classList.add('bg-green-600');
             badge.classList.add('text-white');
             badge.innerText = 'INTERVIEW';
+            syncOriginalCardStatus(cardID, 'interview');
             interviewCardContainer.appendChild(card);
             const interviewJob = document.getElementById('interview-job');
             interviewJob.innerText = interviewCounter();
@@ -115,6 +145,7 @@ rejectedJobButtons.forEach(function (button) {
                 badge.classList.add('bg-red-600');
                 badge.classList.add('text-white');
                 badge.innerText = 'REJECTED';
+                syncOriginalCardStatus(cardID, 'rejected');
                 rejectedCardContainer.appendChild(card);
                 const rejectedJob = document.getElementById('rejected-job');
                 rejectedJob.innerText = rejectCounter();
